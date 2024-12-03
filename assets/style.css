@@ -5,7 +5,6 @@
     --bege-claro: rgba(255, 255, 233, 0.826);
 }
 
-
 /* Configurações */
 
 html {
@@ -14,6 +13,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     scroll-behavior: smooth;
+    user-select: none;
 }
 
 *, *::after, *::before {
@@ -46,7 +46,6 @@ body {
 a {
     text-decoration: none;
 }
-
 
 /* Navegação */
 
@@ -100,13 +99,11 @@ nav ul li.header-link:hover {
     cursor: pointer;
 }
 
-
 nav div.links {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 /* Sobre */
 
@@ -172,13 +169,13 @@ section {
     bottom: 50px;
 }
 
-
 /* Conhecimento */
 
 .second-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .used-technologies-div {
@@ -188,7 +185,9 @@ section {
     align-items: center;
     width: 95%;
     height: 100vh;
+    position: relative;
 }
+
 
 .used-technologies-div h1 {
     display: block;
@@ -199,20 +198,42 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1150px;
-    height: 300px;
+    width: 800px;
+    height: 200px;
     border-radius: 15px;
+    background-color: var(--cinza-claro);
+    z-index: 1;
+    color: white;
+    position: relative;
 }
 
 .used-technologies-div .technologies-image {
+    opacity: 1;
     width: 25%;
-    transition: transform 1s ease-in-out;
     border-radius: 15px;
-    border: 3px solid black;
+    border: 5px solid black;
+    margin-right: 40px;
+    transition: opacity 500ms ease-in-out, transform 1s ease-in-out;
 }
 
-.used-technologies-div .technologies-image:hover {
-    transform: scale(1.1);
+
+
+.used-technologies-div .technologies-image:last-child {
+    margin-right: 0px;
+}
+
+.used-technologies-div .technology-description {
+    opacity: 0%;
+    position: absolute;
+    top: 50%;
+    left: 130px;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: white;
+    z-index: 0;
+    max-width: 80%;
+    text-align: center;
+    transition: 500ms ease-in-out;
 }
 
 /* Projetos */
@@ -224,18 +245,35 @@ section {
     color: white;
 }
 
+.projects-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    border-radius: 15px;
+}
+
 .projects-div h1 {
     display: block;
     font-size: 8rem;
 }
 
-.projects-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 15px;
+.projects-div .projects-images {
+    width: 80rem;
+    height: 400px;
+    background: yellow;
 }
 
-
 /* Contato */
+
+.fourth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cinza-claro)
+}
+
+.contact-div h1 {
+    display: block;
+    font-size: 8rem;
+}
